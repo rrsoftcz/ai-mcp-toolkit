@@ -102,7 +102,7 @@ The setup script will automatically:
 ##### Option 1: Docker (Alternative for Production)
 ```bash
 # Clone and start with Docker
-git clone https://github.com/yourusername/ai-mcp-toolkit.git
+git clone https://github.com/rrsoftcz/ai-mcp-toolkit.git
 cd ai-mcp-toolkit
 docker-compose up -d
 
@@ -113,7 +113,7 @@ docker-compose exec ollama ollama pull llama3.2:3b
 #### Option 2: Native Installation
 ```bash
 # Clone and install locally
-git clone https://github.com/yourusername/ai-mcp-toolkit.git
+git clone https://github.com/rrsoftcz/ai-mcp-toolkit.git
 cd ai-mcp-toolkit
 pip install -e .
 ```
