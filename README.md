@@ -83,7 +83,7 @@ The AI MCP Toolkit includes intelligent environment detection and automatic conf
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ai-mcp-toolkit.git
+git clone https://github.com/rrsoftcz/ai-mcp-toolkit.git
 cd ai-mcp-toolkit
 
 # Run the enhanced setup script (works on Linux, macOS, Windows)
