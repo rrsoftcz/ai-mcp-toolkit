@@ -775,6 +775,172 @@ nvidia-smi -l 5                             # Monitor GPU usage
 - 🔒 **Improved Security** - Enhanced error handling and input validation
 - 📱 **Mobile Responsiveness** - Optimized for all device sizes
 
+## 🔒 Privacy & Data Protection
+
+The AI MCP Toolkit is designed with **privacy-first principles** and **complete local processing** to ensure your data remains secure and private.
+
+### 🏠 Complete Local Processing
+
+**All AI processing happens locally on your machine:**
+- ✅ **No Cloud Dependencies** - All AI models run locally via Ollama
+- ✅ **No Data Transmission** - Your text never leaves your computer
+- ✅ **No External API Calls** - No communication with third-party AI services
+- ✅ **No Internet Required** - Works completely offline after initial setup
+- ✅ **No Telemetry** - No usage data or analytics collected
+
+### 🛡️ Data Security Guarantees
+
+#### What We DON'T Collect
+- ❌ **No Personal Data** - We don't collect, store, or transmit personal information
+- ❌ **No Text Content** - Your processed text never leaves your local environment
+- ❌ **No Usage Analytics** - No tracking of what you process or how you use the toolkit
+- ❌ **No Conversation Logs** - Chat conversations are stored only locally
+- ❌ **No Model Queries** - AI model interactions remain on your system
+- ❌ **No Network Monitoring** - No monitoring of your network activity
+
+#### What Stays Local
+- 🏠 **All Processing** - Text cleaning, analysis, summarization, translation
+- 🏠 **AI Model Inference** - All AI responses generated locally
+- 🏠 **Configuration Data** - Settings and preferences stored locally
+- 🏠 **Cache Files** - Temporary files for performance optimization
+- 🏠 **Conversation History** - Chat logs saved to your local storage
+- 🏠 **GPU Metrics** - Hardware monitoring data never transmitted
+
+### 📁 Local Data Storage
+
+#### Where Your Data is Stored
+```bash
+# Default data directories (configurable)
+~/.ai-mcp-toolkit/          # Main data directory
+├── cache/                  # Processing cache (temporary)
+├── conversations/          # Chat history (JSON files)
+├── config.yaml            # Your configuration settings
+└── logs/                   # Application logs (optional)
+```
+
+#### Data Control
+- 🗂️ **Full Control** - You own and control all your data
+- 🗑️ **Easy Deletion** - Delete any data files directly from your system
+- 💾 **Backup Control** - Back up your data as needed
+- 🔧 **Configuration Control** - Change storage locations in settings
+
+### 🔐 Security Features
+
+#### Network Security
+- 🌐 **Local Servers Only** - Web UI and API run on localhost (127.0.0.1)
+- 🚫 **No External Connections** - No outbound internet connections for AI processing
+- 🔒 **CORS Protection** - Configurable Cross-Origin Resource Sharing settings
+- 🛡️ **Input Validation** - All inputs sanitized and validated
+
+#### Process Security
+- 🔒 **Isolated Processing** - Each text processing operation is isolated
+- 💾 **Memory Management** - Secure memory handling and cleanup
+- 📝 **Logging Control** - Configurable logging levels (no sensitive data logged)
+- 🗃️ **Temporary Files** - Automatic cleanup of temporary processing files
+
+### 🏢 Enterprise & Compliance
+
+#### Compliance Friendly
+- ✅ **GDPR Compliant** - No personal data processing or storage
+- ✅ **HIPAA Friendly** - Suitable for healthcare environments (local processing)
+- ✅ **SOC 2 Compatible** - No data transmission or third-party dependencies
+- ✅ **PCI DSS Safe** - No payment or sensitive data handling
+
+#### Enterprise Features
+- 🏢 **Air-Gapped Deployment** - Works in completely isolated networks
+- 🔒 **On-Premises Only** - No cloud components required
+- 📋 **Audit Trail** - Local logging for compliance requirements
+- 🛡️ **Data Sovereignty** - Your data never crosses jurisdictional boundaries
+
+### 🔧 Privacy Configuration
+
+#### Minimal Data Collection (Optional)
+You can configure the toolkit to collect even less data:
+
+```bash
+# Disable all logging
+export LOG_LEVEL=CRITICAL
+
+# Disable caching
+export ENABLE_CACHE=false
+
+# Use memory-only processing
+export DATA_DIR=/tmp/ai-mcp-toolkit
+```
+
+#### Privacy Settings
+```yaml
+# config.yaml - Privacy-focused configuration
+privacy:
+  disable_logging: true          # No log files created
+  memory_only_cache: true        # Cache in RAM only
+  auto_cleanup: true             # Automatic cleanup of temp files
+  conversation_retention: 0      # Don't save conversations
+```
+
+### 🔍 Transparency & Verification
+
+#### Open Source Verification
+- 📖 **Open Source Code** - Complete source code available for inspection
+- 🔍 **Security Audit Ready** - Code structure supports security audits
+- 🧪 **Testable Claims** - All privacy claims can be verified through testing
+- 📊 **Network Monitoring** - Use network monitoring tools to verify no external calls
+
+#### Verification Commands
+```bash
+# Monitor network connections (no external AI service calls)
+netstat -an | grep :8000    # Only local connections
+
+# Check data directory contents
+ls -la ~/.ai-mcp-toolkit/   # See what data is stored
+
+# Verify Ollama local operation
+ollama ps                   # Shows local models only
+```
+
+### 🔄 Data Portability
+
+#### Export Your Data
+```bash
+# Export conversations
+cp ~/.ai-mcp-toolkit/conversations/* /path/to/backup/
+
+# Export configuration
+cp ~/.ai-mcp-toolkit/config.yaml /path/to/backup/
+
+# Full data export
+tar -czf ai-mcp-toolkit-backup.tar.gz ~/.ai-mcp-toolkit/
+```
+
+#### Data Migration
+- 📦 **Easy Migration** - Move your data between systems
+- 🔄 **Format Independence** - Standard file formats (JSON, YAML)
+- 💾 **Backup Friendly** - Simple file-based storage
+
+### 🏷️ Privacy Labels
+
+| Data Type | Collection | Storage | Transmission | Third Party Access |
+|-----------|------------|---------|--------------|--------------------|
+| Text Content | ❌ No | 🏠 Local Only | ❌ Never | ❌ Never |
+| Conversations | 🏠 Local | 🏠 Local Only | ❌ Never | ❌ Never |
+| Configuration | 🏠 Local | 🏠 Local Only | ❌ Never | ❌ Never |
+| Usage Analytics | ❌ No | ❌ No | ❌ Never | ❌ Never |
+| Personal Info | ❌ No | ❌ No | ❌ Never | ❌ Never |
+| AI Model Data | 🏠 Local | 🏠 Local Only | ❌ Never | ❌ Never |
+
+### 📞 Privacy Questions?
+
+If you have questions about privacy or data handling:
+
+- 📚 Review the [source code](src/) - Complete transparency
+- 🔍 Run network monitoring tools - Verify no external connections
+- 💬 [Open a Discussion](https://github.com/yourusername/ai-mcp-toolkit/discussions) - Ask privacy questions
+- 🐛 [Report Privacy Concerns](https://github.com/yourusername/ai-mcp-toolkit/issues) - Security issue reporting
+
+---
+
+**Summary**: The AI MCP Toolkit processes all your data locally using your own AI models. Nothing is transmitted to external servers, collected for analytics, or shared with third parties. Your privacy is protected by design.
+
 ## 📢 Support
 
 - 📚 [Documentation](docs/)
